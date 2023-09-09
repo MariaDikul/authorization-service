@@ -1,0 +1,17 @@
+    server {
+        listen       80;
+        server_name  localhost;
+
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+
+        location /signin {
+            root   html;
+            index  authorize.html authorize.htm;
+        }
+
+        location / {
+        proxy_pass http://localhost:8080;
+        }
+    }
